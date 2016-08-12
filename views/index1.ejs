@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+</body>
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+</head>
+<style>
+.jumbotron, .navbar{margin-bottom: -20px;}
+    
+</style>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+
+    </div>
+        <ul class="nav navbar-nav">
+            <% for(var i=0; i<templato.length; i++) {%>
+            <li><a href="<%= templato[i].link %>"><%= templato[i].menuitem %></a></li>
+              <% } %>
+        </ul>
+</nav>
+        <div class="jumbotron">
+            <h1>This is great</h1>
+            <h2>May Node and Express be with you.</h2>
+            <p>Welcome to templating using EJS</p>
+            <% for(var i=0; i<templato.length; i++) {%>
+            <button type="button" class="btn btn-primary"><%= templato[i].boxitem %></button>
+  <% } %>
+        </div>
+
+  
+
+<div>
+<form action="/templato" method="POST">
+  <input type="text" placeholder="menuitem" name="menuitem">
+  <input type="text" placeholder="link" name="link">
+  <button type="submit">Add menu</button>
+</form>
+
+
+<form action="/templato" method="POST">
+  <input type="text" placeholder="boxitem" name="boxitem">
+  <button type="submit">Add menu</button>
+</form>
+<!--   <h2>Replace last quote</h2>
+  <button id="update"> Darth Vadar invades! </button>
+</div>
+
+<div>
+  <h2>Delete Darth Vadar's first quote</h2>
+  <button id="delete"> Delete first Darth Vadar quote </button>
+</div> 
+This is causing EVENT LISTENER Error
+-->
+<p class="text-center text-muted">© Copyright 2016 Yianni is bril</p>
+</body>
+<script src="main.js"></script>
+</html>
